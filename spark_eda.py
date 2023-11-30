@@ -149,14 +149,12 @@ if __name__ == "__main__":
     spark = SparkSession.builder.appName("parquet_reader").getOrCreate()
     # Set the path to the directory containing the Parquet files
     data_dir = "MergedData"
-
     all_df = load_fractional_data(spark, data_dir)
+    #plot correlation matrix
     calc_corr(all_df, r"Correlation_Matrix.png")
-
     # calculate feature importance
     model, train_data, test_data = rf_classifier(all_df, "label")
-    #rf_hyper_param_tuning( train_data, test_data)
-
+    # plot feature importance
     get_feature_importance(model, r"Feature_Importance")
 
 
