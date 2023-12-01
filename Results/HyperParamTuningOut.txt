@@ -1,0 +1,22 @@
+F1 score on test data = 0.9715673944685951
+Best Parameters:
+bootstrap: True
+cacheNodeIds: False
+checkpointInterval: 10
+featureSubsetStrategy: auto
+featuresCol: features
+impurity: gini
+labelCol: label
+leafCol:
+maxBins: 32
+maxDepth: 13
+maxMemoryInMB: 256
+minInfoGain: 0.0
+minInstancesPerNode: 1
+minWeightFractionPerNode: 0.0
+numTrees: 25
+predictionCol: prediction
+probabilityCol: probability
+rawPredictionCol: rawPrediction
+seed: 42
+subsamplingRate: 1.0
