@@ -6,7 +6,7 @@ from pyspark.sql import SparkSession
 
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.stat import Correlation
-from pyspark.ml.classification import RandomForestClassifier
+from pyspark.ml.classification import RandomForestClassifier, RandomForestClassificationModel
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 
 from pathlib import Path
@@ -92,10 +92,13 @@ def rf_classifier( spark_df, label_col ):
     train_data, test_data = vectorized_df.randomSplit([train_ratio, test_ratio], seed=42)
 
     # Define the rf classifier
-    rf = RandomForestClassifier(labelCol=label_col, featuresCol="features", maxDepth=7)
+    rf = RandomForestClassifier(labelCol=label_col, featuresCol="features", maxDepth=13, numTrees=25)
 
     # Train the rf model
     model = rf.fit(train_data)
+    mPath = "Results/Trained_Rf"
+    model.save(mPath)
+    RandomForestClassificationModel.load(mPath)
 
     # Make predictions on the test set
     predictions = model.transform(train_data)
@@ -110,6 +113,8 @@ def rf_classifier( spark_df, label_col ):
     f1_score = evaluator.evaluate(predictions)
     print(f"test F1 Score: {f1_score}")
     print(f"test accuracy: {model.summary.accuracy}")  # summary only
+
+
 
     return model, train_data, test_data
 
@@ -139,23 +144,25 @@ def load_fractional_data(spark, data_dir, fraction=0.001):
         if i != 12:
             sample_dict[i] = fraction
     all_df = load_data(spark, data_dir, sample_factor=sample_dict)
-    all_df = all_df.repartition(100)
+    #all_df = all_df.repartition(100)
     return all_df
 
 
 if __name__ == "__main__":
 
+    os.environ["HADOOP_HOME"] = r"C:\hadoop-3.3.5\hadoop-3.3.5"
+    os.environ["JAVA_HOME"] = r"C:\Program Files\Java\jdk-17"
     # Create a Spark session
-    spark = SparkSession.builder.appName("parquet_reader").getOrCreate()
+    spark = SparkSession.builder.appName("parquet_reader").master("local[*]").getOrCreate()
     # Set the path to the directory containing the Parquet files
     data_dir = "MergedData"
     all_df = load_fractional_data(spark, data_dir)
     #plot correlation matrix
-    calc_corr(all_df, r"Correlation_Matrix.png")
+    #calc_corr(all_df, r"Correlation_Matrix.png")
     # calculate feature importance
     model, train_data, test_data = rf_classifier(all_df, "label")
     # plot feature importance
-    get_feature_importance(model, r"Feature_Importance")
+    #get_feature_importance(model, r"Feature_Importance")
 
 
     spark.stop()
