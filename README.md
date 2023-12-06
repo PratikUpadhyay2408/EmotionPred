@@ -1,4 +1,4 @@
-# Real-time Sensor Data Analysis and Prediction Dashboard
+# Real-time Sensor Data Analysis and Emotional State Prediction Dashboard
 
 ## Objective
 The primary goal of this project is to leverage the WESAD CSV dataset to create a comprehensive real-time sensor data analysis and prediction system. This involves a combination of data cleaning, merging, resampling, and synchronization, regression modeling using PySpark and Python, and integration into a Grafana dashboard for enhanced user awareness.
