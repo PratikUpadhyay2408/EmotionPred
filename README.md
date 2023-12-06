@@ -1,43 +1,50 @@
-# Project Proposal : IHK Big Data Engineer 
+# Real-time Sensor Data Analysis and Prediction Dashboard**
 
-**Project Title: Real-time Sensor Data Analysis and Prediction Dashboard**
+## Objective
+The primary goal of this project is to leverage the WESAD CSV dataset to create a comprehensive real-time sensor data analysis and prediction system. This involves a combination of data cleaning, merging, resampling, and synchronization, regression modeling using PySpark and Python, and integration into a Grafana dashboard for enhanced user awareness.
 
-**Project Description:**
+## Key Tasks
 
-The goal of this project is to leverage the WESAD CSV dataset for a comprehensive real-time sensor data analysis and prediction system. The project involves specific data analytics, regression modeling techniques in Python with PySpark, and aims to enhance user awareness through a warning system incorporated into a Tableau dashboard.
+### Data Cleaning, Merging, Resampling, and Synchronization
+- Utilize Pandas and SciPy for efficient data cleaning and merging.
+- Transform the WESAD CSV dataset into Parquet format.
+- Implement resampling techniques to handle varying time intervals.
+- Synchronize sensor signals to ensure temporal alignment.
 
-**Key Project Tasks:**
+### Exploratory Data Analysis (EDA)
+- Conduct initial EDA using Pandas for a correlation matrix.
+- Transition to PySpark for scalable EDA.
 
-1. **Data Ingestion and Real-time Streaming:**
-   - Ingest the WESAD CSV dataset into a Kafka topic using PySpark's Kafka API for seamless integration.
-   - Utilize PySpark's Structured Streaming for real-time processing and analysis of the streaming sensor data.
-   - Apply statistical analysis techniques using Python to identify patterns and anomalies in the data.
+### Random Forest Classifier and Feature Importance
+- Train a Random Forest classifier using PySpark.
+- Extract feature importance for valuable insights.
 
-2. **Tableau Dashboard Development:**
-   - Develop a Tableau dashboard to visualize real-time sensor data.
-   - Utilize Python's Tableau Hyper API for seamless integration with PySpark.
-   - Include visualizations such as line charts, heat maps, and scatter plots to represent sensor trends.
-   - Implement Tableau actions for interactive user exploration of the data.
+### Neural Network Training with TensorFlow
+- Implement a neural network using TensorFlow.
+- Monitor Training using Tensorboard
+- Save the trained model for future use.
 
-3. **Predictive Modeling:**
-   - Utilize historical sensor data to train a regression model in Python (e.g., using scikit-learn).
-   - Feature engineering: Extract relevant features from the dataset using PySpark, considering factors such as time of day, day of the week, and any other contextual information.
-   - Implement a continuous learning process, updating the regression model in real-time as new data becomes available.
-   - Integrate the regression model's predictions into the Tableau dashboard using Python.
+### Prediction System
+- Leverage trained models for real-time predictions.
+- Analyze incoming data for prompt predictions.
 
-4. **User Warning System Integration:**
-   - Define thresholds based on statistical analysis and model predictions to trigger warnings.
-   - Implement a real-time alerting system using PySpark and Python.
-   - Embed alerts directly within the Tableau dashboard, providing users with immediate notifications of potential issues.
+### Grafana Dashboard Development
+- Develop a Grafana dashboard for real-time visualization.
+- Include live updates of predictions, subject information, and feature plots.
+- Generate a PostgreSQL database from a subset of data for visualization.
+- Generate csv files to enable fast live updates on the dashboard for subject information and emotional state prediction
 
-**Expected Outcomes:**
-- Seamless integration of WESAD CSV dataset into a Kafka topic using PySpark.
-- Real-time processing and analysis of sensor data using PySpark's Structured Streaming and Python.
-- A dynamic Tableau dashboard with interactive visualizations for real-time sensor data exploration, using Python for data processing.
-- Implementation of a regression model in Python for predictive insights.
-- Integration of a robust user warning system providing real-time alerts within the Tableau dashboard using Python.
+## Expected Outcomes
 
-**Benefits:**
-- Improved decision-making through real-time insights and predictive analytics using Python.
-- Proactive identification of potential issues through immediate user alerts.
-- Enhanced user experience with an intuitive and informative Tableau dashboard.
+- Efficient data cleaning, transformation into Parquet format, resampling, and synchronization using Pandas and SciPy.
+- Thorough exploratory data analysis with Pandas and scalable analysis with PySpark.
+- Trained Random Forest classifier and extracted feature importance.
+- Implementation of a neural network for enhanced predictive capabilities.
+- Real-time predictions using the trained models.
+- Development of a Grafana dashboard with live updates and feature plots.
+
+## Benefits
+
+- Improved decision-making with real-time insights and predictive analytics.
+- Proactive issue identification through immediate user alerts on the Grafana dashboard.
+- Enhanced user experience with an informative dashboard displaying live updates, important features, and synchronized sensor signals.
