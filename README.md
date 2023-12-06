@@ -46,9 +46,9 @@ The primary goal of this project is to leverage the WESAD CSV dataset to create 
 ## Benefits
 
 - Improved decision-making with real-time insights and predictive analytics.
-- Proactive issue identification through immediate user alerts on the Grafana dashboard.
+- Proactive issue identification through immediate prediction on the Grafana dashboard.
 - Enhanced user experience with an informative dashboard displaying live updates, important features, and synchronized sensor signals.
-Certainly! Here's a "How to Run" section for your GitHub repository:
+
 
 ---
 
