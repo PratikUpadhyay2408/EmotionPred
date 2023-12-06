@@ -1,0 +1,55 @@
+reading MergedData\S10.parquet
+reading MergedData\S11.parquet
+reading MergedData\S13.parquet
+reading MergedData\S14.parquet
+reading MergedData\S15.parquet
+reading MergedData\S16.parquet
+reading MergedData\S17.parquet
+reading MergedData\S2.parquet
+reading MergedData\S3.parquet
+reading MergedData\S4.parquet
+reading MergedData\S5.parquet
+reading MergedData\S6.parquet
+reading MergedData\S7.parquet
+reading MergedData\S8.parquet
+reading MergedData\S9.parquet
+WARNING:tensorflow:From C:\Users\upadh\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\src\backend.py:873: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2023-12-03 12:47:44.165302: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From C:\Users\upadh\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\src\optimizers\__init__.py:309: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+starting to learn
+Epoch 1/10
+WARNING:tensorflow:From C:\Users\upadh\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated. Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+WARNING:tensorflow:From C:\Users\upadh\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\src\engine\base_layer_utils.py:384: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+14356/14356 [==============================] - 68s 5ms/step - loss: 0.5559 - accuracy: 0.8071 - val_loss: 0.3374 - val_accuracy: 0.8940
+Epoch 2/10
+14356/14356 [==============================] - 67s 5ms/step - loss: 0.2632 - accuracy: 0.9190 - val_loss: 0.2114 - val_accuracy: 0.9364
+Epoch 3/10
+14356/14356 [==============================] - 67s 5ms/step - loss: 0.2014 - accuracy: 0.9394 - val_loss: 0.1780 - val_accuracy: 0.9477
+Epoch 4/10
+14356/14356 [==============================] - 71s 5ms/step - loss: 0.1780 - accuracy: 0.9472 - val_loss: 0.1763 - val_accuracy: 0.9492
+Epoch 5/10
+14356/14356 [==============================] - 70s 5ms/step - loss: 0.1646 - accuracy: 0.9512 - val_loss: 0.1581 - val_accuracy: 0.9536
+Epoch 6/10
+14356/14356 [==============================] - 68s 5ms/step - loss: 0.1552 - accuracy: 0.9541 - val_loss: 0.1495 - val_accuracy: 0.9571
+Epoch 7/10
+14356/14356 [==============================] - 66s 5ms/step - loss: 0.1484 - accuracy: 0.9562 - val_loss: 0.1447 - val_accuracy: 0.9572
+Epoch 8/10
+14356/14356 [==============================] - 66s 5ms/step - loss: 0.1422 - accuracy: 0.9581 - val_loss: 0.1410 - val_accuracy: 0.9612
+Epoch 9/10
+14356/14356 [==============================] - 64s 4ms/step - loss: 0.1374 - accuracy: 0.9594 - val_loss: 0.1362 - val_accuracy: 0.9605
+Epoch 10/10
+14356/14356 [==============================] - 65s 5ms/step - loss: 0.1332 - accuracy: 0.9610 - val_loss: 0.1481 - val_accuracy: 0.9568
+17579/17579 [==============================] - 45s 3ms/step
+17579/17579 [==============================] - 49s 3ms/step - loss: 0.1477 - accuracy: 0.9571
+C:\Users\upadh\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\src\engine\training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+Test Loss: 0.1477
+Test Accuracy: 0.9571
+F1 Score: 0.9564
+
+Process finished with exit code 0
