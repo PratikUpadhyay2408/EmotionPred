@@ -149,9 +149,6 @@ def load_fractional_data(spark, data_dir, fraction=0.001):
 
 
 if __name__ == "__main__":
-
-    os.environ["HADOOP_HOME"] = r"C:\hadoop-3.3.5\hadoop-3.3.5"
-    os.environ["JAVA_HOME"] = r"C:\Program Files\Java\jdk-17"
     # Create a Spark session
     spark = SparkSession.builder.appName("parquet_reader").master("local[*]").getOrCreate()
     # Set the path to the directory containing the Parquet files
